@@ -1,0 +1,97 @@
+.save-later-item {
+    width:300px;
+    height:300px;
+    background-color:white;
+    border-radius:10px;
+    box-shadow:0px 0px 20px 0px rgb(221 221 221 / 50%);
+    margin: 20px;
+    padding: 1rem;
+    text-align: center;
+    transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+}
+
+.name-price {
+    position:relative;
+    display:flex;
+    justify-content: space-around;
+    align-items: baseline;
+}
+.from-wishlist {
+    position:absolute;
+    right:49px;
+    font-size:12px;
+    display:block;
+}
+
+/* -------------------------------- Part to adapt for page wishlist*/
+
+.save-later-list  {
+    width:100%;
+    position: relative;
+}
+ 
+.save-later-list.loading:after {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background: #ffffff;
+    opacity: 0.5;
+    z-index: 5;
+}
+ 
+.save-later-list.loading:before {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top:-12px;
+    margin-left:-12px;
+    content: "";
+    background-image: url('https://labme.us.mywoocart.com/wp-content/uploads/2019/09/labme-spinner.gif');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: 6;
+}
+ 
+.save-later-list div {
+    position: relative;
+}
+ 
+/* button wishlist */
+.wishlist-toggle i{
+transition: all 200ms ease-out;
+}
+.wishlist-toggle i .loading,
+.wishlist-toggle i .check {
+    opacity: 0;
+}
+ 
+.wishlist-toggle.active i .check {
+    opacity: 1;
+}
+ 
+.wishlist-toggle.active i .heart {
+    opacity: 0;
+}
+ 
+.wishlist-toggle.loading i .loading,
+.wishlist-table.loading:before {
+    animation:loading 500ms 0ms infinite normal linear;
+    transform-origin: center;
+    opacity: 1;
+}
+ 
+.wishlist-toggle.loading i .heart {
+    opacity:0;
+}
+ 
+@keyframes loading {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
